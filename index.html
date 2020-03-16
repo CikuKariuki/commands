@@ -12,5 +12,125 @@
     <p> <h3>chmod 600 ~/.ssh/authorized_keys</h3> configures such that I am the only one who can edit.</p>
     <p> <h3>sudo -i </h3> accesses root user</p>
     <p> <h3></h3> 6:10</p>
+    <p><h3>Killing all ports</h3> sudo fuser -k 3000/tcp </p>
+    <h3>Installing Rabbit MQ</h3>
+    <ul>
+        <li>sudo apt-get update</li>
+        <li>sudo apt-get upgrade</li>
+        <p><b>Install Erlang:</b> Erlang is a functional, general-purpose, concurrent programming language which was built for concurrency, fault tolerance and distributed application architectures</p>
+        <li>wget -O- https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc | sudo apt-key add -</li>
+        <li>echo "deb https://packages.erlang-solutions.com/ubuntu bionic contrib" | sudo tee /etc/apt/sources.list.d/rabbitmq.list</li>
+        <li>sudo apt update</li>
+        <li>sudo apt -y install erlang</li>
+        <li><b>Verify your installation of Erlang:</b> erl </li>
+        <li>crtl + C twice to quit the erlang shell</li>
+        <li><b>Add the Apt repository to your Apt source list directory</b> echo "deb https://dl.bintray.com/rabbitmq/debian xenial main" | sudo tee /etc/apt/sources.list.d/bintray.rabbitmq.list</li>
+        <li>curl -fsSL https://github.com/rabbitmq/signing-keys/releases/download/2.0/rabbitmq-release-signing-key.asc | sudo apt-key add -  <b>This will instruct apt to trust packages signed by that key.</b></li>
+        <li>sudo apt-get update</li>
+        <li>sudo apt-get install apt-transport-https <b>so as to be able to download rabbitmq from bintray</b></li>
+        <li>sudo apt-get install rabbitmq-server -y --fix-missing <b>install the rabbitmq-server package </b></li>
+        <p><b> Start the server:</b></p>
+        <li>sudo systemctl start rabbitmq-server.service</li>
+        <li>sudo systemctl enable rabbitmq-server.service</li>
+        <li><b>checking the status of RabbitMQ: </b> sudo rabbitmqctl status</li>
+        <p>By default, rabitmq creates a user named "guest" so to create your own administrator account:</p>
+        <li>sudo rabbitmqctl add_user ciku password </li>
+        <li>sudo rabbitmqctl set_user_tags ciku administrator</li>
+        <li>sudo rabbitmqctl set_permissions -p / ciku ".*" ".*" ".*"</li>
+        <p> Enable the rabbitmq management console so you can monitor the rabbitmq server processes from a web browser</p>
+        <li>sudo rabbitmq-plugins enable rabbitmq_management</li>
+        <li>sudo chown -R rabbitmq:rabbitmq /var/lib/rabbitmq/ </li>
+        <p>To setup an administrator user account for accessing RabbitMq server management console repeat:</p>
+        <li>sudo rabbitmqctl add_user ciku password </li>
+        <li>sudo rabbitmqctl set_user_tags ciku administrator</li>
+        <li>sudo rabbitmqctl set_permissions -p / ciku ".*" ".*" ".*"</li>
+        <li></li>
+
+    </ul>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+    <p><h3></h3></p>
+
 </body>
 </html>
